@@ -14,7 +14,6 @@ import leftSep from "@/assets/left-separator.png";
 import rightSep from "@/assets/right-separator.png";
 import infoTemple from "@/assets/about-temple.jpeg";
 import infoKashi from "@/assets/about-kashi.jpeg";
-import infoGhats from "@/assets/about-kashi.jpeg";
 import infoTrust from "@/assets/about-trust.jpeg";
 import infoFaqs from "@/assets/faqs.jpeg";
 import imgRudraksha from "@/assets/prasadam/rudraksha.png";
@@ -28,19 +27,6 @@ import prasadamLogo from "@/assets/prasadam/prasadam-logo.png";
 const BANNERS = [banner1, banner2, banner3];
 const saffron = "linear-gradient(135deg, #D97C2A 0%, #A85A18 100%)";
 
-const AARTIS = [
-  { name: "Mangala Aarti", time: "03:00 AM", done: true },
-  { name: "Bhog Aarti", time: "11:30 AM", done: true },
-  { name: "Sandhya Aarti", time: "07:00 PM", done: false, next: true },
-  { name: "Shayan Aarti", time: "10:30 PM", done: false },
-];
-
-const SERVICES = [
-  { id: "rudrabhishek", name: "Rudrabhishek", desc: "Sacred Shiva worship ritual", icon: "🪔", color: "#8B4513", price: "₹1,100" },
-  { id: "laghu-rudra", name: "Laghu Rudra", desc: "11 priests chanting", icon: "🕉️", color: "#6B3A2A", price: "₹5,100" },
-  { id: "maha-mrityu", name: "Maha Mrityunjaya", desc: "Divine protection ritual", icon: "📿", color: "#7B4E3D", price: "₹2,100" },
-  { id: "vishesh-puja", name: "Vishesh Puja", desc: "Special personal puja", icon: "🔱", color: "#9B6A4A", price: "₹3,100" },
-];
 
 const BESTSELLERS = [
   { img: imgRudraksha, name: "Panchmukhi Rudraksha", sub: "5-face, energised", price: "₹450", bg: "#EEECEA" },
