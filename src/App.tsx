@@ -8,6 +8,10 @@ const Souvenir = lazy(() => import("@/pages/Souvenir"));
 const Profile = lazy(() => import("@/pages/Profile"));
 const Darshan = lazy(() => import("@/pages/Darshan"));
 const Tickets = lazy(() => import("@/pages/Tickets"));
+const AboutTemple = lazy(() => import("@/pages/AboutTemple"));
+const AboutKashi = lazy(() => import("@/pages/AboutKashi"));
+const AboutTrust = lazy(() => import("@/pages/AboutTrust"));
+const ForeignDevotee = lazy(() => import("@/pages/ForeignDevotee"));
 
 const Loader = () => (
   <div className="flex-1 flex items-center justify-center bg-background h-full">
@@ -27,6 +31,10 @@ export default function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/darshan" element={<Darshan />} />
             <Route path="/tickets" element={<Tickets />} />
+            <Route path="/about" element={<AboutTemple />} />
+            <Route path="/about-kashi" element={<AboutKashi />} />
+            <Route path="/about-trust" element={<AboutTrust />} />
+            <Route path="/foreign-devotee" element={<ForeignDevotee />} />
           </Routes>
         </Suspense>
       </AppLayout>

@@ -249,10 +249,10 @@ export default function Home() {
             <img src={infoTemple} alt="Temple" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(60,20,5,0.78) 0%, rgba(20,5,0,0.35) 100%)" }} />
             <div className="absolute inset-0 p-4 flex flex-col justify-between">
-              <span className="font-manrope text-[9.5px] font-bold uppercase tracking-[0.16em] text-white/55">Ancient History · Significance</span>
+              <span className="font-manrope text-[9.5px] font-bold uppercase tracking-[0.16em] text-white/80">Ancient History · Significance</span>
               <div>
                 <h3 className="font-manrope font-bold text-[18px] text-white leading-tight">About the Temple</h3>
-                <p className="font-manrope text-[11px] text-white/65 mt-0.5 leading-snug">One of the 12 Jyotirlingas, over 3,500 years of devotion</p>
+                <p className="font-manrope text-[11px] text-white/85 mt-0.5 leading-snug">One of the 12 Jyotirlingas, over 3,500 years of devotion</p>
                 <div className="flex items-center gap-1 mt-2">
                   <span className="font-manrope text-[11px] font-bold text-[#D97C2A]">Explore</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="#D97C2A" strokeWidth="2.5" className="w-3 h-3"><path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -270,7 +270,7 @@ export default function Home() {
             <img src={infoKashi} alt="Kashi" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(10,5,0,0.25) 0%, rgba(30,10,0,0.72) 100%)" }} />
             <div className="absolute inset-0 p-3 flex flex-col justify-end">
-              <span className="font-manrope text-[8.5px] font-bold uppercase tracking-wider text-white/55 mb-0.5">City of Shiva</span>
+              <span className="font-manrope text-[8.5px] font-bold uppercase tracking-wider text-white/80 mb-0.5">City of Shiva</span>
               <h3 className="font-manrope font-bold text-[15px] text-white leading-tight">About Kashi</h3>
               <div className="flex items-center gap-1 mt-1">
                 <span className="font-manrope text-[10px] font-bold text-[#F0A843]">Read more</span>
@@ -288,7 +288,7 @@ export default function Home() {
             <img src={infoTrust} alt="Trust" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(10,5,0,0.2) 0%, rgba(30,10,0,0.78) 100%)" }} />
             <div className="absolute inset-0 p-3 flex flex-col justify-end">
-              <span className="font-manrope text-[8.5px] font-bold uppercase tracking-wider text-white/55 mb-0.5">Governance</span>
+              <span className="font-manrope text-[8.5px] font-bold uppercase tracking-wider text-white/80 mb-0.5">Governance</span>
               <h3 className="font-manrope font-bold text-[15px] text-white leading-tight">About the Trust</h3>
               <div className="flex items-center gap-1 mt-1">
                 <span className="font-manrope text-[10px] font-bold text-[#F0A843]">Know more</span>
@@ -306,7 +306,7 @@ export default function Home() {
             <img src={infoFaqs} alt="FAQs" className="absolute inset-0 w-full h-full object-cover" />
             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(10,5,0,0.2) 0%, rgba(30,10,0,0.75) 100%)" }} />
             <div className="absolute inset-0 p-3 flex flex-col justify-end">
-              <span className="font-manrope text-[8.5px] font-bold uppercase tracking-wider text-white/55 mb-0.5">Visitor Info</span>
+              <span className="font-manrope text-[8.5px] font-bold uppercase tracking-wider text-white/80 mb-0.5">Visitor Info</span>
               <h3 className="font-manrope font-bold text-[15px] text-white leading-tight">FAQs</h3>
               <div className="flex items-center gap-1 mt-1">
                 <span className="font-manrope text-[10px] font-bold text-[#F0A843]">View</span>
@@ -501,29 +501,104 @@ export default function Home() {
           </button>
         </div>
 
-        {/* 2×3 category grid */}
+        {/* Bento grid — row 1: large left + small right stack */}
         <div className="grid grid-cols-2 gap-3">
-          {SOUVENIR_CATS.map((c, i) => (
-            <div
-              key={i}
-              className="rounded-[20px] overflow-hidden flex flex-col active:scale-[0.98] transition-transform cursor-pointer"
-              style={{ background: c.bg, border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 3px 16px rgba(0,0,0,0.06)" }}
-              onClick={() => navigate("/souvenir")}
-            >
-              <div className="px-3.5 pt-3.5 pb-1">
-                <p className="font-manrope text-[9px] font-bold uppercase tracking-wider leading-none" style={{ color: c.tag }}>{c.cat}</p>
-                <h4 className="font-caslon font-bold text-[#1C1C1C] text-[16px] leading-[1.2] whitespace-pre-line mt-1">{c.name}</h4>
-              </div>
-              <div className="relative h-[100px] mt-1">
-                <img
-                  src={c.img}
-                  alt={c.name.replace("\n", " ")}
-                  className="absolute bottom-0 right-0 w-full h-full object-contain object-bottom"
-                  loading="lazy"
-                />
-              </div>
+
+          {/* Large tile — Rudraksha */}
+          <div
+            className="row-span-2 rounded-[22px] overflow-hidden flex flex-col active:scale-[0.98] transition-transform cursor-pointer"
+            style={{ background: SOUVENIR_CATS[0].bg, border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
+            onClick={() => navigate("/souvenir")}
+          >
+            <div className="px-4 pt-4 pb-2">
+              <p className="font-manrope text-[9px] font-bold uppercase tracking-wider" style={{ color: SOUVENIR_CATS[0].tag }}>{SOUVENIR_CATS[0].cat}</p>
+              <h4 className="font-manrope font-bold text-[#1C1C1C] text-[17px] leading-tight whitespace-pre-line mt-1">{SOUVENIR_CATS[0].name}</h4>
             </div>
-          ))}
+            <div className="flex-1 relative min-h-[160px]">
+              <img
+                src={SOUVENIR_CATS[0].img}
+                alt="Rudraksha"
+                className="absolute bottom-0 left-0 right-0 w-full h-full object-contain object-bottom"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+          {/* Small tile — Models & Frames */}
+          <div
+            className="rounded-[22px] overflow-hidden flex flex-col active:scale-[0.98] transition-transform cursor-pointer"
+            style={{ background: SOUVENIR_CATS[1].bg, border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
+            onClick={() => navigate("/souvenir")}
+          >
+            <div className="px-3 pt-3 pb-1">
+              <p className="font-manrope text-[8.5px] font-bold uppercase tracking-wider" style={{ color: SOUVENIR_CATS[1].tag }}>{SOUVENIR_CATS[1].cat}</p>
+              <h4 className="font-manrope font-bold text-[#1C1C1C] text-[14px] leading-tight whitespace-pre-line mt-0.5">{SOUVENIR_CATS[1].name}</h4>
+            </div>
+            <div className="relative h-[90px]">
+              <img src={SOUVENIR_CATS[1].img} alt="Models" className="absolute bottom-0 right-0 w-full h-full object-contain object-bottom" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Small tile — Idols & Statues */}
+          <div
+            className="rounded-[22px] overflow-hidden flex flex-col active:scale-[0.98] transition-transform cursor-pointer"
+            style={{ background: SOUVENIR_CATS[2].bg, border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
+            onClick={() => navigate("/souvenir")}
+          >
+            <div className="px-3 pt-3 pb-1">
+              <p className="font-manrope text-[8.5px] font-bold uppercase tracking-wider" style={{ color: SOUVENIR_CATS[2].tag }}>{SOUVENIR_CATS[2].cat}</p>
+              <h4 className="font-manrope font-bold text-[#1C1C1C] text-[14px] leading-tight whitespace-pre-line mt-0.5">{SOUVENIR_CATS[2].name}</h4>
+            </div>
+            <div className="relative h-[90px]">
+              <img src={SOUVENIR_CATS[2].img} alt="Idols" className="absolute bottom-0 right-0 w-full h-full object-contain object-bottom" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Wide tile — Shankh Shaligram */}
+          <div
+            className="col-span-2 rounded-[22px] overflow-hidden flex items-center gap-4 px-4 active:scale-[0.99] transition-transform cursor-pointer"
+            style={{ background: SOUVENIR_CATS[3].bg, border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", height: 110 }}
+            onClick={() => navigate("/souvenir")}
+          >
+            <div className="flex-1">
+              <p className="font-manrope text-[9px] font-bold uppercase tracking-wider" style={{ color: SOUVENIR_CATS[3].tag }}>{SOUVENIR_CATS[3].cat}</p>
+              <h4 className="font-manrope font-bold text-[#1C1C1C] text-[18px] leading-tight whitespace-pre-line mt-1">{SOUVENIR_CATS[3].name}</h4>
+            </div>
+            <div className="relative w-[130px] h-full shrink-0">
+              <img src={SOUVENIR_CATS[3].img} alt="Shankh" className="absolute bottom-0 right-0 w-full h-full object-contain object-bottom" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Small tile — Dhoop */}
+          <div
+            className="rounded-[22px] overflow-hidden flex flex-col active:scale-[0.98] transition-transform cursor-pointer"
+            style={{ background: SOUVENIR_CATS[4].bg, border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
+            onClick={() => navigate("/souvenir")}
+          >
+            <div className="px-3 pt-3 pb-1">
+              <p className="font-manrope text-[8.5px] font-bold uppercase tracking-wider" style={{ color: SOUVENIR_CATS[4].tag }}>{SOUVENIR_CATS[4].cat}</p>
+              <h4 className="font-manrope font-bold text-[#1C1C1C] text-[14px] leading-tight whitespace-pre-line mt-0.5">{SOUVENIR_CATS[4].name}</h4>
+            </div>
+            <div className="relative h-[90px]">
+              <img src={SOUVENIR_CATS[4].img} alt="Dhoop" className="absolute bottom-0 right-0 w-full h-full object-contain object-bottom" loading="lazy" />
+            </div>
+          </div>
+
+          {/* Small tile — Banarasi Sarees */}
+          <div
+            className="rounded-[22px] overflow-hidden flex flex-col active:scale-[0.98] transition-transform cursor-pointer"
+            style={{ background: SOUVENIR_CATS[5].bg, border: "1px solid rgba(0,0,0,0.07)", boxShadow: "0 4px 20px rgba(0,0,0,0.07)" }}
+            onClick={() => navigate("/souvenir")}
+          >
+            <div className="px-3 pt-3 pb-1">
+              <p className="font-manrope text-[8.5px] font-bold uppercase tracking-wider" style={{ color: SOUVENIR_CATS[5].tag }}>{SOUVENIR_CATS[5].cat}</p>
+              <h4 className="font-manrope font-bold text-[#1C1C1C] text-[14px] leading-tight whitespace-pre-line mt-0.5">{SOUVENIR_CATS[5].name}</h4>
+            </div>
+            <div className="relative h-[90px]">
+              <img src={SOUVENIR_CATS[5].img} alt="Sarees" className="absolute bottom-0 right-0 w-full h-full object-contain object-bottom" loading="lazy" />
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -533,31 +608,20 @@ export default function Home() {
       <div className="px-4 mt-7">
         <SectionHeader title="Live Darshan" />
         <div
-          className="rounded-[20px] overflow-hidden relative active:scale-[0.99] transition-transform cursor-pointer"
-          style={{ height: 180, boxShadow: "0 8px 32px rgba(100,50,15,0.18)" }}
-          onClick={() => navigate("/darshan")}
+          className="rounded-[20px] overflow-hidden relative"
+          style={{ aspectRatio: "16/9", boxShadow: "0 8px 32px rgba(100,50,15,0.18)" }}
         >
-          <img src={infoGhats} alt="Ghats" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(15,5,0,0.82) 0%, rgba(30,10,0,0.45) 100%)" }} />
-
-          {/* Live badge */}
-          <div className="absolute top-4 left-4 flex items-center gap-1.5 px-2.5 py-1 rounded-full" style={{ background: "rgba(220,38,38,0.9)", backdropFilter: "blur(8px)" }}>
+          <div className="absolute top-3 left-3 z-10 flex items-center gap-1.5 px-2.5 py-1 rounded-full pointer-events-none" style={{ background: "rgba(220,38,38,0.92)" }}>
             <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
             <span className="font-manrope font-bold text-white text-[10px] uppercase tracking-wider">Live Now</span>
           </div>
-
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 gap-3">
-            {/* Play button */}
-            <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: "rgba(217,124,42,0.9)", backdropFilter: "blur(8px)", boxShadow: "0 0 0 4px rgba(217,124,42,0.25), 0 0 0 8px rgba(217,124,42,0.1)" }}>
-              <svg viewBox="0 0 24 24" fill="white" className="w-6 h-6 ml-1">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-            <div>
-              <p className="font-caslon text-white text-[18px] leading-tight">Watch Kashi Vishwanath</p>
-              <p className="font-manrope text-white/60 text-[11px] mt-0.5">Live stream · HD · 24×7</p>
-            </div>
-          </div>
+          <iframe
+            src="https://www.youtube.com/embed/SYoTvcjOwQk?autoplay=1&mute=1&si=GgaQp47HWwPReLaZ"
+            title="Kashi Vishwanath Live Darshan"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full border-0"
+          />
         </div>
       </div>
 
@@ -641,7 +705,7 @@ export default function Home() {
       </div>
 
             {/* ── Today's Aarti Schedule ── */}
-      <div className="px-4 mt-5">
+      {/* <div className="px-4 mt-5">
         <div className="rounded-[20px] overflow-hidden" style={{ background: "#fff", border: "1px solid rgba(180,120,60,0.12)", boxShadow: "0 2px 16px rgba(100,50,15,0.07)" }}>
           <div className="px-4 pt-4 pb-3 flex items-center justify-between" style={{ borderBottom: "1px solid rgba(180,120,60,0.08)" }}>
             <div>
@@ -677,10 +741,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* ── Services Section ── */}
-      <div className="mt-5">
+      {/* <div className="mt-5">
         <div className="px-4 flex items-center justify-between mb-3">
           <h2 className="font-manrope font-bold text-[16px] text-temple-brown">Temple Services</h2>
           <button onClick={() => navigate("/services")} className="font-manrope text-[12px] font-semibold text-temple-gold flex items-center gap-1">View All <ArrowRight className="w-3.5 h-3.5" /></button>
@@ -712,10 +776,10 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* ── Upcoming Visit ── */}
-      <div className="px-4 mt-5">
+      {/* <div className="px-4 mt-5">
         <div
           className="rounded-[20px] p-4 relative overflow-hidden"
           style={{ background: saffron }}
@@ -735,28 +799,9 @@ export default function Home() {
             <span className="font-manrope text-[11px] text-white/60">Ref: SKVT-294801</span>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      {/* ── Prasad Delivery Banner ── */}
-      <div className="px-4 mt-4">
-        <div
-          className="rounded-[18px] p-4 flex items-center gap-4"
-          style={{ background: "rgba(255,248,235,0.8)", border: "1px solid rgba(180,120,60,0.15)" }}
-        >
-          <span className="text-[36px]">🍬</span>
-          <div className="flex-1">
-            <p className="font-manrope font-bold text-[13px] text-temple-brown">Temple Prasad Delivery</p>
-            <p className="font-manrope text-[11px] text-foreground/50 mt-0.5">Get sacred prasad delivered to your home</p>
-          </div>
-          <button
-            onClick={() => navigate("/souvenir")}
-            className="shrink-0 px-3 py-2 rounded-[10px] font-manrope font-bold text-white text-[11px] active:scale-95"
-            style={{ background: saffron }}
-          >
-            Order
-          </button>
-        </div>
-      </div>
+
 
 
       {/* ── Language Bottom Sheet ── */}
