@@ -602,7 +602,7 @@ export default function Home() {
             <span className="font-manrope font-bold text-white text-[10px] uppercase tracking-wider">Live Now</span>
           </div>
           <iframe
-            src="https://www.youtube.com/embed/SYoTvcjOwQk?autoplay=1&mute=1&si=GgaQp47HWwPReLaZ"
+            src="https://www.youtube.com/live/dKVQ-5pjT9Y?si=JPAqfW0Knma_QlSA"
             title="Kashi Vishwanath Live Darshan"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
